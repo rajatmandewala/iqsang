@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+input.ng-invalid.ng-dirty{
+    border-bottom-color : #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+
+button.btn-submit{
+    width: 100%;
+}
+
+ul.answer li:hover{
+    background-color: #26a69a;
+    color: #eafaf9;
+    cursor: pointer;
+}
+
+ul li.selected{
+    background-color: #26a69a !important;
+    color: #eafaf9 !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+#toolbarmenu{
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#studentToolBar .toolbar-spacer{
+   
+}
+
+#studentToolBar .title-center{    
+    flex: 1 1 auto;
+  text-align: center;
+}
+
+#studentToolBar .iq{
+    
+    /* width: 90%; */
+    /* margin: 0 auto;  */
+        
+}
+
+#studentToolBar .logout{
+    margin-left: 3px;
+    
+}
+
+#studentToolBar .toolbar-icon{
+    cursor: pointer;
+    margin:  0 8px;
+    padding-right: 5 px;
+}
+
+#sidenavContainer{
+    margin-top: 64px;
+}
+#sidenav{
+    width:  200px;
+}
+
+#sidenav.menu-close{
+    width: 70 px;
+}
+
+#sidenav.menu-open{
+    width: 200 px;
+}
+
+#sidenav .avatar{
+    background-image:url('https://i.pravatar.cc/300');
+    background-size:cover;
+
+}
+
+#sidenav .menu-item{
+    width: 100%;
+    border-radius: 0;
+    text-align: left;
+    padding: 8px;
+ 
+}
+#sidenav .menu-item:hover{
+    background: #eee;
+}
+
+#sidenav .mat-list-item-content{
+    padding: 0px;
+}
+
+#sidenav .menu-item mat-icon{
+    margin-right: 5px;
+}

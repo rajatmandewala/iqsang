@@ -1,0 +1,6 @@
+.center {
+    width: 100%;
+    position: absolute;
+    height: 50px;   
+    left: calc(30% - 50px/2);
+}

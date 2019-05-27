@@ -1,0 +1,47 @@
+<app-maintoolbar></app-maintoolbar>
+    <mat-sidenav-container fullscreen id="sidenavContainer">           
+            <mat-sidenav mode="side" opened #sidenav
+       id="sidenav"
+      [class.menu-open]="isMenuOpen"
+      [class.menu-close]="!isMenuOpen"
+      >
+      <mat-list id="menus">
+        <mat-card>
+            <mat-card-header>
+                <div mat-card-avatar class="avatar">
+
+                </div>
+                <mat-card-title>
+                  Rajat
+                </mat-card-title>
+                <mat-card-subtitle>
+                  Programmer
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+
+       
+
+          <mat-list-item (click)="dash()">
+              <button class="menu-item" mat-flat-button>
+                <mat-icon>dashboard</mat-icon>
+                Dashboard</button>
+          </mat-list-item>
+
+          <mat-list-item (click)="test()">
+              <button class="menu-item" mat-flat-button >
+                <mat-icon>question_answer</mat-icon>
+                Test</button>
+          </mat-list-item>          
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div *ngIf="isTest==true">
+            <app-selecttesttopic></app-selecttesttopic>
+        </div>
+        <div *ngIf="isQuiz==true">
+            <app-selecttesttopic></app-selecttesttopic>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

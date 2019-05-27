@@ -1,0 +1,58 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<div class="container">
+<br>  
+
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Add Topic</h4>
+		
+	<p class="divider-text">
+        <span class="bg-light"></span>
+    </p>
+	<form #addTopicForm="ngForm" (ngSubmit)="OnSubmit(topicname.value,description.value)">
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    
+		 </div>
+        <input  class="form-control" placeholder="Topic" type="text" name="topicname" #topicname ngModel >
+    </div> 	
+	
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    
+		</div>
+        <input class="form-control" placeholder="Description" type="text" name="description" #description ngModel required>
+	</div> <!-- form-group// -->
+                                  
+  <div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+    </div>
+    <!-- ([ngModel])="user.userId" -->
+    <select class="form-control" (change)="topicTypeChange($event)">
+            <option value="" disabled selected>Topic Type</option>
+            <option value="VE">Very Easy</option>
+            <option value="E">Easy</option>
+            <option value="M">Meduim</option>
+            <option value="H">Hard</option>
+            <option value="VH">Very Hard</option>
+          </select>
+    </div> <!-- form-group end.// -->
+
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="!addTopicForm.valid" >Add Topic</button>
+    </div> <!-- form-group// -->      
+	
+</form>
+</article>
+</div> <!-- card.// -->
+</div> 
+<!--container end.//-->

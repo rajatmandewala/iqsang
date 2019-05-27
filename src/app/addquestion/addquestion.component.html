@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<div class="container">
+<br>  
+
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Add Question</h4>
+		
+	<p class="divider-text">
+        <span class="bg-light"></span>
+    </p>
+	<form #addQuestionForm="ngForm" (ngSubmit)="OnSubmit(question.value,option1.value,option2.value,option3.value,option4.value)">
+
+	<div class="form-group input-group">
+		<div class="input-group-prepend">		    
+		 </div>
+        <input  class="form-control" placeholder="question" type="text" name="question" #question ngModel required>
+    </div> 	
+	
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">		    
+		</div>
+        <input class="form-control" placeholder="option1" type="text" name="option1" #option1 ngModel required>
+    </div> 
+    
+    <div class="form-group input-group">
+            <div class="input-group-prepend">		    
+            </div>
+            <input class="form-control" placeholder="option2" type="text" name="option2" #option2 ngModel required>
+    </div>
+    
+    <div class="form-group input-group">
+            <div class="input-group-prepend">		    
+            </div>
+            <input class="form-control" placeholder="option3" type="text" name="option3" #option3 ngModel required>
+    </div> 
+
+    <div class="form-group input-group">
+            <div class="input-group-prepend">		    
+            </div>
+            <input class="form-control" placeholder="option4" type="text" name="option4" #option4 ngModel required>
+    </div>
+    
+    <div class="form-group input-group">
+            <div class="input-group-prepend">		    
+            </div>
+            <input class="form-control" placeholder="answer" type="text" name="answer" #answer ngModel required>
+    </div>
+
+
+    <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+            </div>
+            <!-- ([ngModel])="user.userId" -->
+            <select class="form-control"  id="topic"  (change)="topicChange($event)">
+                    <option disabled>Topic</option>
+                    <option *ngFor="let topic of getTopic" [value]="topic.id">{{topic.topicName}}</option>
+                </select>
+            </div> <!-- form-group end.// -->
+
+            <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                    </div>
+                    <!-- ([ngModel])="user.userId" -->
+                    <select class="form-control">
+                            <option value="" disabled selected>Question Type</option>
+                            <option value="VE">Very Easy</option>
+                            <option value="E">Easy</option>
+                            <option value="M">Meduim</option>
+                            <option value="H">Hard</option>
+                            <option value="VH">Very Hard</option>
+                          </select>
+                    </div> <!-- form-group end.// -->	
+                                            
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="!addQuestionForm.valid" >Add</button>
+    </div> <!-- form-group// -->      	
+</form>
+</article>
+</div> <!-- card.// -->
+</div> 
+<!--container end.//-->

@@ -1,0 +1,16 @@
+<mat-toolbar id="studentToolBar" color="warn">
+    <mat-icon id="toolbarmenu" (click)="onToolbarMenuToggle()">
+      menu
+    </mat-icon>
+    <span class="title-center">IQS</span>     
+    <span class="toolbar-spacer"></span>
+    <mat-icon
+    class="toolbar-icon"
+    matBadge="8"
+    matBadgePosition="after"
+    matBadgeColor="accent" >
+      notifications
+    </mat-icon>
+    
+    <button class="logout" mat-flat-button color="warn" (click)="logout()">logout</button>
+</mat-toolbar>
